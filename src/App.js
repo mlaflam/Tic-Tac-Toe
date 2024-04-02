@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Square from "./components/Square";
 import Board from "./components/Board";
 
 export default function Game() {
@@ -8,7 +7,8 @@ export default function Game() {
   const currentSquares = history[history.length - 1];
 
   function handlePlay(nextSquares) {
-     // TODO
+    setHistory([...history, nextSquares]);
+    setXIsNext(!xIsNext);
   }
 
   return (
