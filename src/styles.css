@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Reddit+Mono:wght@200..900&family=Roboto:wght@100;300;400;500;700&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -54,21 +55,37 @@ body {
   font-family: sans-serif;
   margin: 20px;
   padding: 0;
+  background-color: #4b9b48;
+}
+
+.board {
+  border: solid;
+  border-color: #4b9b48;
+  border-width: 3px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #4b9b48;
 }
 
 .square {
-  background: #fff;
-  border: 1px solid #999;
+  background: #cff5ce;
   float: left;
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 75px;
+  color: #4b9b48;
+  
   line-height: 34px;
-  height: 34px;
+  height: 150px;
+  width: 150px;
+
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+
+  border-radius: 5px;
+  border: solid;
+  border-color: #4b9b48;
+  border-width: 2px;
 }
 
 .board-row:after {
@@ -78,13 +95,58 @@ body {
 }
 
 .status {
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
+  font-size: 40px;
+
+  color: rgb(3, 41, 1);
+
+  font-family: Reddit Mono;
+  font-weight: 600;
 }
 .game {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  margin-left: 100px;
+  margin-top: 100px;
 }
 
 .game-info {
   margin-left: 20px;
+}
+
+.get-info {
+  margin-top: 45px;
+}
+
+.move-button {
+  background: #cff5ce;
+  color: #235921;
+  border-color: white;
+  border: solid;
+  border-width: 0px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  font-size: 16px;
+  font-family: Reddit Mono;
+  font-weight: 400;
+
+  margin-top: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.move-button:hover {
+  background: #b1e4b0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.35);
+}
+
+.move-button:active {
+  background: #96d795;
+  color: #184617;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.75);
 }

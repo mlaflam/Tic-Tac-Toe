@@ -2,10 +2,14 @@ import Square from "./Square";
 
 const Board = ({xIsNext, squares, onPlay}) => {
   const winner = calculateWinner(squares);
+  const tie = calculateTie(squares);
 
   let status;
   if (winner) {
-    status = "Winner " + winner;
+    status = "The winner is " + winner +"!";
+  }
+  else if (tie) {
+    status = "It's a draw!";
   }
   else {
     status = "Next player: " + (xIsNext ? "X" : "O");
@@ -23,6 +27,13 @@ const Board = ({xIsNext, squares, onPlay}) => {
       nextSquares[i] = "O";
     }
     onPlay(nextSquares);
+  }
+
+  function calculateTie(squares) {
+    const noneNull = !squares.some(square => square === null);
+    if (!calculateWinner(squares) && noneNull) { //if array is full and no winner 
+      return true;
+    }
   }
 
   function calculateWinner(squares) {
@@ -48,7 +59,8 @@ const Board = ({xIsNext, squares, onPlay}) => {
   return (
     <>
       <div className="status">{status}</div>
-      <div className="board-row">
+      <div className="board">
+        <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)}/>
         <Square value={squares[1]} onSquareClick={() => handleClick(1)}/>
         <Square value={squares[2]} onSquareClick={() => handleClick(2)}/>
@@ -65,6 +77,8 @@ const Board = ({xIsNext, squares, onPlay}) => {
         <Square value={squares[7]} onSquareClick={() => handleClick(7)}/>
         <Square value={squares[8]} onSquareClick={() => handleClick(8)}/>
       </div>
+      </div>
+      
     </>
   );
 }
