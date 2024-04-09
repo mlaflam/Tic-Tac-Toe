@@ -67,7 +67,7 @@ body {
   background-color: #4b9b48;
 }
 
-.square {
+.square, .square-highlight {
   background: #cff5ce;
   float: left;
   font-size: 75px;
@@ -86,6 +86,11 @@ body {
   border: solid;
   border-color: #4b9b48;
   border-width: 2px;
+}
+
+.square-highlight {
+  background: #a3e3a1;
+  color: #0f530c;
 }
 
 .board-row:after {

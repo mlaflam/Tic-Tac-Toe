@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
 
-const Square = ({value, onSquareClick}) => {
+const Square = ({value, onSquareClick, highlight}) => {
   return (
     <button
-      className="square"
+      className={"square" + (highlight ? "-highlight" : "")}
       onClick = {onSquareClick}
     >
       {value}
